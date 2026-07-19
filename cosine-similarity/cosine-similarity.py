@@ -6,11 +6,12 @@ def cosine_similarity(a, b):
     Returns: float in [-1, 1]
     """
     a, b = np.array(a), np.array(b)
-    dot_product = np.dot(a, b)
-    eucl_a = np.linalg.norm(a)
-    eucl_b = np.linalg.norm(b)
-
-    if eucl_a == 0 or eucl_b == 0:
+    ab_product = np.dot(a, b)
+    ab_eucl = eucl_norm(a) * eucl_norm(b)
+    
+    if ab_eucl == 0:
         return 0
+    return ab_product / ab_eucl
 
-    return dot_product / (eucl_a * eucl_b)
+def eucl_norm(a):
+    return np.sqrt(np.sum(np.power(a, 2)))
