@@ -7,4 +7,5 @@ def manhattan_distance(x, y):
     """
     # Write code here
     x, y = np.array(x), np.array(y)
-    return np.sum(np.abs(x - y)).astype(np.int64).item()
+    result = np.sum(np.abs(x - y))
+    return int(result)
