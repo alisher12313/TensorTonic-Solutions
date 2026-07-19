@@ -7,5 +7,5 @@ def euclidean_distance(x, y):
     """
     # Write code here
     x, y = np.array(x), np.array(y)
-    eucl_distance = np.linalg.norm(x - y)
-    return eucl_distance
+    result = np.sqrt(np.sum(np.power(x - y, 2)))
+    return float(result)
